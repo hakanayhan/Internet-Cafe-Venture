@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 05fa4a4b307307a46b2eb34243a99a53, type: 2}
 --- !u!1 &13216694
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ GameObject:
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &13216695
 Transform:
@@ -268,6 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310194824}
+  - component: {fileID: 310194825}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -290,6 +291,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310194825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310194823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a9258533ac3a94cbe1f1b0545c4a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerPos: {fileID: 1627921048}
 --- !u!1001 &377271269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,18 +316,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03999996
       objectReference: {fileID: 0}
@@ -323,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.19
+      value: 2.46
       objectReference: {fileID: 0}
     - target: {fileID: 130875895459631137, guid: 08f61ad3c3b30eb4d892e5d6cf377ebc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -449,8 +451,8 @@ GameObject:
   m_Name: Wall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &405380818
 Transform:
@@ -546,8 +548,8 @@ GameObject:
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &542786718
 Transform:
@@ -811,8 +813,8 @@ GameObject:
   m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &713560867
 Transform:
@@ -993,7 +995,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &978953841
 Transform:
@@ -1133,7 +1135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255839055}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1, y: 0, z: 1}
+  m_LocalPosition: {x: -1.25, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1263,7 +1265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627921047}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0, z: 1}
+  m_LocalPosition: {x: 1.25, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1286,8 +1288,8 @@ GameObject:
   m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1693206346
 Transform:
@@ -1439,7 +1441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733401055}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Manager Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

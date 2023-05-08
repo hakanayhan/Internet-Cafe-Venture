@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130875895459631137}
   - component: {fileID: 113017599666863297}
+  - component: {fileID: 2979760719325353103}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 323544134899879688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4369353471860327299}
@@ -57,6 +58,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
+--- !u!114 &2979760719325353103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323544134899879688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b802b56adbeaf7c449fa55342e143c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIdle: 0
+  managerDesk: {fileID: 0}
 --- !u!1 &1056956132440504754
 GameObject:
   m_ObjectHideFlags: 0
