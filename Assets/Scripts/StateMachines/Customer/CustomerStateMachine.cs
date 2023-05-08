@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class CustomerStateMachine : StateMachine
 {
-    public QueueController queueController;
-    void Start()
+    public bool inQueue = false;
+    public void QueueUp(Transform queuePos)
     {
-        queueController = FindObjectOfType<QueueController>();
-        AssignManager();
-    }
-
-    public void AssignManager()
-    {
-        SwitchState(new MoveState(this, queueController.customerPos, new IdleState(this)));
+        inQueue = true;
+        SwitchState(new MoveState(this, queuePos, new IdleState(this)));
     }
 }
