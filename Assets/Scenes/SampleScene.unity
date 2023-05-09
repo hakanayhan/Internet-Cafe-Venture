@@ -401,7 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a9258533ac3a94cbe1f1b0545c4a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPos: {fileID: 1627921048}
   manager: {fileID: 1804388291}
   queueList: []
   queueLocations:
@@ -1921,10 +1920,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 5233472542672668983, guid: fdc961b8b1bc80047a02422602f50f35, type: 3}
-      propertyPath: computerTransform
-      value: 
-      objectReference: {fileID: 1750857961}
     - target: {fileID: 5233472542672668983, guid: fdc961b8b1bc80047a02422602f50f35, type: 3}
       propertyPath: managerDeskTransform
       value: 

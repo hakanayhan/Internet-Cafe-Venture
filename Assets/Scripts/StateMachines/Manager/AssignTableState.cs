@@ -19,6 +19,7 @@ public class AssignTableState : State
 
     public override void Enter()
     {
+        stateMachine.radialTimer.StartTimer(takeCustomerTimer);
     }
 
     public override void Tick(float deltaTime)

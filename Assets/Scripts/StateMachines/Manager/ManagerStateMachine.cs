@@ -7,6 +7,7 @@ public class ManagerStateMachine : StateMachine
     public Transform managerDeskTransform;
     public bool onDesk;
     public float takeCustomerTimer = 3f;
+    public RadialTimer radialTimer;
     public void Move(Transform movePos)
     {
         SwitchState(new MoveState(this, movePos, new IdleState(this)));
