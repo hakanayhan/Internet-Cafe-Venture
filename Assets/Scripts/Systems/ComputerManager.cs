@@ -21,7 +21,7 @@ public class ComputerManager : MonoBehaviour
 
 [Serializable] public class Computers
 {
-    public Computer computer;
+    public Computer computerObject;
     public bool isIdle = true;
     public float cost;
 }

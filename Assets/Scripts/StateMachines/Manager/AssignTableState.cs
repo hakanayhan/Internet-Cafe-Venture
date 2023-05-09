@@ -6,10 +6,10 @@ public class AssignTableState : State
 {
     ManagerStateMachine stateMachine;
     CustomerStateMachine customer;
-    Computer computer;
+    Computers computer;
     float takeCustomerTimer;
 
-    public AssignTableState(ManagerStateMachine stateMachine, CustomerStateMachine customer, Computer computer)
+    public AssignTableState(ManagerStateMachine stateMachine, CustomerStateMachine customer, Computers computer)
     {
         this.stateMachine = stateMachine;
         this.customer = customer;
@@ -33,6 +33,6 @@ public class AssignTableState : State
     public override void Exit()
     {
         QueueController.Instance.RemoveQueue(customer);
-        customer.SwitchState(new MoveState(customer, computer.customerPos, new IdleState(customer)));
+        customer.SwitchState(new MoveState(customer, computer.computerObject.customerPos, new UseComputerState(customer, computer)));
     }
 }

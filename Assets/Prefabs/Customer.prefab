@@ -73,6 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isIdle: 0
   inQueue: 0
+  radialTimer: {fileID: 363391764963049161}
+  usageTime: 15
 --- !u!1 &1056956132440504754
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,4 +28,8 @@ public abstract class StateMachine : MonoBehaviour
         currentState = state;
         currentState?.Enter();
     }
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
 }

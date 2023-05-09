@@ -21,12 +21,12 @@ public class ManagerStateMachine : StateMachine
 
     public void AssignTable(CustomerStateMachine customer)
     {
-        foreach(Computers computers in ComputerManager.Instance.computers)
+        foreach(Computers computer in ComputerManager.Instance.computers)
         {
-            if (computers.isIdle)
+            if (computer.isIdle)
             {
-                computers.isIdle = false;
-                SwitchState(new AssignTableState(this, customer, computers.computer));
+                computer.isIdle = false;
+                SwitchState(new AssignTableState(this, customer, computer));
                 break;
             }
         }
