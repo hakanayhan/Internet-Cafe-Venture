@@ -440,7 +440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computers:
-  - {fileID: 1485592304}
+  - computer: {fileID: 1485592304}
+    isIdle: 1
+    cost: 1
 --- !u!1001 &400442254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1460,7 +1462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04befaa6f755b4449ad895d5ee185b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isIdle: 1
   customerPos: {fileID: 1750857961}
 --- !u!1 &1627921047
 GameObject:

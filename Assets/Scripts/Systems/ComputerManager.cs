@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class ComputerManager : MonoBehaviour
 {
     public static ComputerManager Instance;
-    public List<Computer> computers = new List<Computer>();
+    public List<Computers> computers = new List<Computers>();
 
     void Awake()
     {
@@ -16,4 +17,11 @@ public class ComputerManager : MonoBehaviour
         }
         Instance = this;
     }
+}
+
+[Serializable] public class Computers
+{
+    public Computer computer;
+    public bool isIdle = true;
+    public float cost;
 }
