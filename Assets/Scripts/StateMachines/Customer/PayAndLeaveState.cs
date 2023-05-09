@@ -15,7 +15,7 @@ public class PayAndLeaveState : State
 
     public override void Enter()
     {
-        //payment
+        Wallet.Instance.AddMoney(stateMachine.usageTime * computer.cost);
         computer.isIdle = true;
         stateMachine.SwitchState(new MoveState(stateMachine, CustomerManager.Instance.exitPoint, new DestroyState(stateMachine)));
     }
