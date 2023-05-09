@@ -6,7 +6,7 @@ public class QueueController : MonoBehaviour
 {
     public static QueueController Instance;
     public Transform customerPos;
-
+    public ManagerStateMachine manager;
     public List<CustomerStateMachine> queueList = new List<CustomerStateMachine>();
     public List<Transform> queueLocations = new List<Transform>();
     void Awake()
@@ -20,10 +20,23 @@ public class QueueController : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        if (queueList.Count > 0 && queueList[0].isIdle && manager.isIdle && manager.onDesk)
+            manager.PlaceCustomer(queueList[0]);
+    }
+
     public void AddQueue(CustomerStateMachine customer)
     {
         queueList.Add(customer);
         RefreshQueue();
+    }
+
+    public void RemoveQueue(CustomerStateMachine customer)
+    {
+        queueList.Remove(customer);
+        customer.inQueue = false;
+        RefreshQueue(true);
     }
 
     public void RefreshQueue(bool forceRefresh = false)
