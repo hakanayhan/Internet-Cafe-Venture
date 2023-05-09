@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 310194824}
   - component: {fileID: 310194825}
   - component: {fileID: 310194826}
+  - component: {fileID: 310194827}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -427,6 +428,20 @@ MonoBehaviour:
   customers: []
   _minSpawnDelay: 2
   _maxSpawnDelay: 8
+--- !u!114 &310194827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310194823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c5da6c451225b499b243ab23c06ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  computers:
+  - {fileID: 1485592304}
 --- !u!1001 &400442254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1407,6 +1422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485592303}
+  - component: {fileID: 1485592304}
   m_Layer: 0
   m_Name: Computer 1
   m_TagString: Untagged
@@ -1433,6 +1449,20 @@ Transform:
   m_Father: {fileID: 1223408840}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1485592304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485592302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04befaa6f755b4449ad895d5ee185b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIdle: 1
+  customerPos: {fileID: 1750857961}
 --- !u!1 &1627921047
 GameObject:
   m_ObjectHideFlags: 0

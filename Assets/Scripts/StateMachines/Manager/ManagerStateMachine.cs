@@ -6,7 +6,6 @@ public class ManagerStateMachine : StateMachine
 {
     public Transform managerDeskTransform;
     public bool onDesk;
-    public Transform computerTransform;
     public float takeCustomerTimer = 3f;
     public void Move(Transform movePos)
     {
@@ -19,8 +18,16 @@ public class ManagerStateMachine : StateMachine
         onDesk = true;
     }
 
-    public void PlaceCustomer(CustomerStateMachine customer)
+    public void AssignTable(CustomerStateMachine customer)
     {
-        SwitchState(new AssignTableState(this, customer));
+        foreach(Computer computer in ComputerManager.Instance.computers)
+        {
+            if (computer.isIdle)
+            {
+                computer.isIdle = false;
+                SwitchState(new AssignTableState(this, customer, computer));
+                break;
+            }
+        }
     }
 }

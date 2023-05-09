@@ -5,7 +5,6 @@ using UnityEngine;
 public class QueueController : MonoBehaviour
 {
     public static QueueController Instance;
-    public Transform customerPos;
     public ManagerStateMachine manager;
     public List<CustomerStateMachine> queueList = new List<CustomerStateMachine>();
     public List<Transform> queueLocations = new List<Transform>();
@@ -23,7 +22,7 @@ public class QueueController : MonoBehaviour
     private void Update()
     {
         if (queueList.Count > 0 && queueList[0].isIdle && manager.isIdle && manager.onDesk)
-            manager.PlaceCustomer(queueList[0]);
+            manager.AssignTable(queueList[0]);
     }
 
     public void AddQueue(CustomerStateMachine customer)
