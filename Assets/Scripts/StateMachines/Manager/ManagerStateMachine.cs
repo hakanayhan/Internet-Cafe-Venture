@@ -15,8 +15,18 @@ public class ManagerStateMachine : StateMachine
 
     public void MoveToManagerDesk()
     {
-        SwitchState(new MoveState(this, managerDeskTransform, new IdleState(this)));
-        onDesk = true;
+        if (!onDesk)
+        {
+            ResetPositions();
+            SwitchState(new MoveState(this, managerDeskTransform, new IdleState(this)));
+            onDesk = true;
+        }
+    }
+
+    public void MoveToFreePosition(Vector3 hit)
+    {
+        ResetPositions();
+        SwitchState(new FreeMoveState(this, hit));
     }
 
     public void AssignTable(CustomerStateMachine customer)
@@ -25,10 +35,14 @@ public class ManagerStateMachine : StateMachine
         {
             if (computer.isIdle)
             {
-                computer.isIdle = false;
                 SwitchState(new AssignTableState(this, customer, computer));
                 break;
             }
         }
+    }
+
+    void ResetPositions()
+    {
+        onDesk = false;
     }
 }

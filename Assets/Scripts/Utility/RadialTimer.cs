@@ -43,7 +43,7 @@ public class RadialTimer : MonoBehaviour
         }
     }
 
-    void FinishTimer()
+    public void FinishTimer()
     {
         outerRing.SetActive(false);
         fill.SetActive(false);

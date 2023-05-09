@@ -27,12 +27,20 @@ public class AssignTableState : State
         takeCustomerTimer = Mathf.Max(0f, takeCustomerTimer -= deltaTime);
 
         if (takeCustomerTimer == 0f)
+        {
+            computer.isIdle = false;
             stateMachine.SwitchState(new IdleState(stateMachine));
+            QueueController.Instance.RemoveQueue(customer);
+            customer.SwitchState(new MoveState(customer, computer.computerObject.customerPos, new UseComputerState(customer, computer)));
+        }
+            
     }
 
     public override void Exit()
     {
-        QueueController.Instance.RemoveQueue(customer);
-        customer.SwitchState(new MoveState(customer, computer.computerObject.customerPos, new UseComputerState(customer, computer)));
+        if(takeCustomerTimer != 0f)
+        {
+            stateMachine.radialTimer.FinishTimer();
+        }
     }
 }
