@@ -27,12 +27,12 @@ public class FreeMoveState : State
 
         if (stateMachine.agent.remainingDistance < 0.1f)
         {
+            stateMachine.agent.enabled = false;
             stateMachine.SwitchState(new IdleState(stateMachine));
         }
     }
 
     public override void Exit()
     {
-        stateMachine.agent.enabled = false;
     }
 }

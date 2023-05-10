@@ -31,12 +31,12 @@ public class MoveState : State
         if (stateMachine.agent.remainingDistance < 0.1f)
         {
             stateMachine.transform.SetPositionAndRotation(destination.position, destination.rotation);
+            stateMachine.agent.enabled = false;
             stateMachine.SwitchState(stateToChangeTo);
         }
     }
 
     public override void Exit()
     {
-        stateMachine.agent.enabled = false;
     }
 }
