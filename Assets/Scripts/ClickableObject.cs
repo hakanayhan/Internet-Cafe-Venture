@@ -8,12 +8,22 @@ public class ClickableObject : MonoBehaviour
     private ManagerStateMachine managerState;
     public enum WhereTo { managerDesk, freeMove }
     public WhereTo whereTo;
+
+    private Vector3 _firstClickPosition;
     private void Start()
     {
         managerState = manager.GetComponent<ManagerStateMachine>();
     }
+    void OnMouseDown()
+    {
+        _firstClickPosition = Input.mousePosition;
+    }
     void OnMouseUp()
     {
+        Vector3 currentClickPosition = Input.mousePosition;
+        if ((_firstClickPosition - currentClickPosition).magnitude > 10f)
+            return;
+
         if (whereTo == WhereTo.managerDesk)
             managerState.MoveToManagerDesk();
 
@@ -23,7 +33,9 @@ public class ClickableObject : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Vector3 hitPoint = hit.point;
-                managerState.MoveToFreePosition(hitPoint);
+                GameObject clickedObject = hit.collider.gameObject;
+                if(clickedObject == this.gameObject)
+                    managerState.MoveToFreePosition(hitPoint);
             }
         }
     }
