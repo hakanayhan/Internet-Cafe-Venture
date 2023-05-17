@@ -8,6 +8,7 @@ public class CustomerStateMachine : StateMachine
     public RadialTimer radialTimer;
     public float usageTime;
     public double amountToPay;
+    public string customerName;
     public void QueueUp(Transform queuePos)
     {
         inQueue = true;

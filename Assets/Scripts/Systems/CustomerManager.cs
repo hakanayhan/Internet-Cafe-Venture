@@ -14,6 +14,14 @@ public class CustomerManager : MonoBehaviour
     [SerializeField] private float _minSpawnDelay = 2f;
     [SerializeField] private float _maxSpawnDelay = 8f;
     [HideInInspector] public float nextSpawnTime;
+    List<string> names = new List<string>()
+    {
+    "Abigail", "Alexander", "Aiden", "Amelia", "Andrew", "Anna", "Ava",
+    "Benjamin", "Charlotte", "Daniel", "David", "Elijah", "Elizabeth", "Emily", "Emma",
+    "Ethan", "Grace", "Hannah", "Isabella", "James", "Joseph", "Joshua", "Liam", "Lily",
+    "Lucas", "Matthew", "Mia", "Michael", "Oliver", "Olivia", "Owen", "Ryan", "Samuel",
+    "Sarah", "Sophia", "Sophie", "Thomas", "Victoria", "William", "Zoe"
+    };
     void Awake()
     {
         if (Instance != null)
@@ -37,7 +45,14 @@ public class CustomerManager : MonoBehaviour
         GameObject customerGameObject = Instantiate(_customerPrefab, spawnPoint.position, Quaternion.identity);
         CustomerStateMachine customer = customerGameObject.GetComponent<CustomerStateMachine>();
         QueueController.Instance.AddQueue(customer);
+        SetCustomerName(customer);
         customers.Add(customer);
+    }
+
+    private void SetCustomerName(CustomerStateMachine customer)
+    {
+        int i = Random.Range(0, names.Count);
+        customer.customerName = names[i];
     }
 
     public void SetDelayTime()

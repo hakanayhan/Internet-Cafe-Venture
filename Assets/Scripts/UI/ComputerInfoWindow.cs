@@ -47,7 +47,7 @@ public class ComputerInfoWindow : Window
         levelText.text = level.ToString();
         Currency cost = new Currency(computer.cost);
         costPerSecText.text = cost.ToString();
-        string customerName = (computer.customer != null) ? computer.customer.name : "Empty";
+        string customerName = (computer.customer != null) ? computer.customer.customerName : "Empty";
         customerText.text = customerName;
         float usageTime = computer.usageTime;
         string s = usageTime >= 2 ? " secs" : " sec";
