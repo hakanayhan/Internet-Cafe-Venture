@@ -23,5 +23,9 @@ public class ComputerManager : MonoBehaviour
 {
     public Computer computerObject;
     public bool isIdle = true;
-    public float cost;
+    public float level;
+    public double cost;
+    public int usageTime;
+    public double totalCost;
+    public CustomerStateMachine customer;
 }

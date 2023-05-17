@@ -31,6 +31,8 @@ public class AssignTableState : State
             computer.isIdle = false;
             stateMachine.SwitchState(new IdleState(stateMachine));
             QueueController.Instance.RemoveQueue(customer);
+            computer.customer = customer;
+            ComputerInfoWindow.Instance.Refresh();
             customer.SwitchState(new MoveState(customer, computer.computerObject.customerPos, new UseComputerState(customer, computer)));
         }
             

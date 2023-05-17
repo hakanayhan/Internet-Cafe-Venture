@@ -12,6 +12,8 @@ public class ClickableObject : MonoBehaviour
     public enum Windows { Null, computerInfoWindow }
     public Windows openWindow;
 
+    public GameObject referenceGameObject;
+
     private Vector3 _firstClickPosition;
     private void Start()
     {
@@ -54,6 +56,6 @@ public class ClickableObject : MonoBehaviour
     private void OpenWindow()
     {
         if (openWindow == Windows.computerInfoWindow)
-            ComputerInfoWindow.Instance.OpenWindow();
+            ComputerInfoWindow.Instance.OpenWindow(referenceGameObject.GetComponent<Computer>());
     }
 }
