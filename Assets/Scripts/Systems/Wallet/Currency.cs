@@ -77,7 +77,7 @@ public class Currency
         }
         else
         {
-            valueString = rawValueString;
+            valueString = value.ToString("0.##");
         }
 
         return valueString + shortNotation[shortNotationIndex];
