@@ -1116,7 +1116,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 98350264}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1919272227}
+        m_TargetAssemblyTypeName: ComputerUpgradeWindow, Assembly-CSharp
+        m_MethodName: LvUpButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98350264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,17 +1661,31 @@ MonoBehaviour:
   - computerObject: {fileID: 1485592304}
     isIdle: 1
     level: 0
+    baseCost: 1
     cost: 1
+    baseUpgradeCost: 50
+    upgradeCost: 50
     usageTime: 0
     totalCost: 0
     customer: {fileID: 0}
+    computerUpgrades:
+      unlockCost: 0
+      costMultiplier: 1
+      upgradeCostMultiplier: 1
   - computerObject: {fileID: 1122996213}
     isIdle: 1
     level: 0
+    baseCost: 1
     cost: 1
+    baseUpgradeCost: 50
+    upgradeCost: 50
     usageTime: 0
     totalCost: 0
     customer: {fileID: 0}
+    computerUpgrades:
+      unlockCost: 0
+      costMultiplier: 1
+      upgradeCostMultiplier: 1
 --- !u!114 &310194828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,7 +1713,7 @@ GameObject:
   - component: {fileID: 331841349}
   - component: {fileID: 331841348}
   m_Layer: 0
-  m_Name: Coin Text
+  m_Name: Price Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1782,7 +1808,7 @@ GameObject:
   - component: {fileID: 350336103}
   - component: {fileID: 350336102}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5613,6 +5639,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 679378060}
+  deviceNameText: {fileID: 538058663}
+  levelText: {fileID: 187576340}
+  costPerSecText: {fileID: 568166149}
+  upgradeCostText: {fileID: 331841349}
 --- !u!1 &1927718300
 GameObject:
   m_ObjectHideFlags: 0
