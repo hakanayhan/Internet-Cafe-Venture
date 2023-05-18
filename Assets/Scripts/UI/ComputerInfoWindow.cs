@@ -51,8 +51,8 @@ public class ComputerInfoWindow : Window
         customerText.text = customerName;
         float usageTime = computer.usageTime;
         string s = usageTime >= 2 ? " secs" : " sec";
-        usageTimeText.text = usageTime.ToString() + s;
-        totalCostText.text = computer.totalCost.ToString();
+        usageTimeText.text = usageTime.ToString("0.#") + s;
+        totalCostText.text = computer.totalCost.ToString("0.#");
     }
 
     public void OpenUpgrade()
