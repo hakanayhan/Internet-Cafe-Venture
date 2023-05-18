@@ -46,13 +46,19 @@ public class ComputerInfoWindow : Window
         float level = computer.level;
         levelText.text = level.ToString();
         Currency cost = new Currency(computer.cost);
-        costPerSecText.text = cost.ToString();
+        costPerSecText.text = cost.ToString() + "/sec";
         string customerName = (computer.customer != null) ? computer.customer.customerName : "Empty";
         customerText.text = customerName;
         float usageTime = computer.usageTime;
         string s = usageTime >= 2 ? " secs" : " sec";
         usageTimeText.text = usageTime.ToString() + s;
         totalCostText.text = computer.totalCost.ToString();
+    }
+
+    public void OpenUpgrade()
+    {
+        CloseWindow();
+        ComputerUpgradeWindow.Instance.OpenWindow(computer);
     }
 
     public void OpenWindow(Computer computerObject)
