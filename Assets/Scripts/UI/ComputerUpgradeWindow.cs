@@ -15,7 +15,8 @@ public class ComputerUpgradeWindow : Window
     public Button buttonObj;
     [SerializeField] private GameObject coinObj;
     [SerializeField] private GameObject starPrefab;
-    [SerializeField] private GameObject stars;
+    private GameObject stars;
+    [SerializeField] private GameObject starsObj;
     public List<GameObject> starsList;
     Computers computer;
     float level;
@@ -63,7 +64,7 @@ public class ComputerUpgradeWindow : Window
             progressBar.SetFillAmount(progress);
             buttonObj.interactable = true;
             coinObj.SetActive(true);
-            SetStars(computer, rank);
+            SetStars(computer);
         }
         else
         {
@@ -72,12 +73,14 @@ public class ComputerUpgradeWindow : Window
             progressBar.SetFillAmount(1);
             buttonObj.interactable = false;
             coinObj.SetActive(false);
-            SetStars(computer, rank);
+            SetStars(computer);
         }
     }
 
-    void SetStars(Computers computer, float rank)
+    public void SetStars(Computers computer, GameObject starsGameObject = null)
     {
+        stars = starsGameObject != null ? starsGameObject : starsObj;
+        int rank = computer.rank;
         int ranksCount = ComputerManager.Instance.upgradeRanks.Count;
         ResetStars();
 

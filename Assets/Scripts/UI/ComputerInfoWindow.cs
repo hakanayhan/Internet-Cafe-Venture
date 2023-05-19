@@ -13,6 +13,7 @@ public class ComputerInfoWindow : Window
     [SerializeField] Text customerText;
     [SerializeField] Text usageTimeText;
     [SerializeField] Text totalCostText;
+    [SerializeField] GameObject starsObj;
 
     Computers computer;
 
@@ -53,6 +54,7 @@ public class ComputerInfoWindow : Window
         string s = usageTime >= 2 ? " secs" : " sec";
         usageTimeText.text = usageTime.ToString("0.#") + s;
         totalCostText.text = computer.totalCost.ToString("0.#");
+        ComputerUpgradeWindow.Instance.SetStars(computer, starsObj);
     }
 
     public void OpenUpgrade()
