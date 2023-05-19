@@ -7,6 +7,7 @@ public class ComputerManager : MonoBehaviour
 {
     public static ComputerManager Instance;
     public List<Computers> computers = new List<Computers>();
+    public List<UpgradeRank> upgradeRanks;
 
     void Awake()
     {
@@ -24,6 +25,13 @@ public class ComputerManager : MonoBehaviour
         computer.computerUpgrades.upgradeCostMultiplier += 0.15;
         computer.cost = computer.baseCost * computer.computerUpgrades.costMultiplier;
         computer.upgradeCost = computer.baseUpgradeCost * computer.computerUpgrades.upgradeCostMultiplier;
+        if(computer.level == upgradeRanks[computer.rank].rankUpLevel)
+        {
+            if (upgradeRanks.Count > computer.rank)
+                computer.rank++;
+            if (upgradeRanks.Count <= computer.rank)
+                computer.isMaxLv = true;
+        }
     }
 }
 
@@ -38,6 +46,8 @@ public class ComputerManager : MonoBehaviour
     public double upgradeCost;
     public int usageTime;
     public double totalCost;
+    public int rank;
+    public bool isMaxLv;
     public CustomerStateMachine customer;
     public ComputerUpgrades computerUpgrades;
 }
@@ -47,4 +57,9 @@ public class ComputerManager : MonoBehaviour
     public float unlockCost;
     public double costMultiplier = 1;
     public double upgradeCostMultiplier = 1;
+}
+
+[Serializable] public class UpgradeRank
+{
+    public int rankUpLevel;
 }
