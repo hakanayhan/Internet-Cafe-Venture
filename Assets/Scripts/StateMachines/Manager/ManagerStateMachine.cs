@@ -33,7 +33,7 @@ public class ManagerStateMachine : StateMachine
     {
         foreach(Computers computer in ComputerManager.Instance.computers)
         {
-            if (computer.isIdle)
+            if (computer.isIdle && computer.level > 0)
             {
                 SwitchState(new AssignTableState(this, customer, computer));
                 break;

@@ -5,4 +5,6 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     public Transform customerPos;
+    public GameObject unlockGameObject;
+    public GameObject computerGameObject;
 }

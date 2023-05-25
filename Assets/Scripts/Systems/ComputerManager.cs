@@ -40,21 +40,26 @@ public class ComputerManager : MonoBehaviour
     public Computer computerObject;
     public bool isIdle = true;
     public float level;
+
     public double baseCost;
-    public double cost;
     public double baseUpgradeCost;
+    public double unlockCost;
+
+    public double cost;
     public double upgradeCost;
+    
     public int usageTime;
     public double totalCost;
+
     public int rank;
     public bool isMaxLv;
+
     public CustomerStateMachine customer;
     public ComputerUpgrades computerUpgrades;
 }
 
 [Serializable] public class ComputerUpgrades
 {
-    public float unlockCost;
     public double costMultiplier = 1;
     public double upgradeCostMultiplier = 1;
 }

@@ -9,16 +9,13 @@ public class ClickableObject : MonoBehaviour
     public enum WhereTo { Null, managerDesk, freeMove }
     public WhereTo whereTo;
 
-    public enum Windows { Null, computerInfoWindow }
+    public enum Windows { Null, computerInfoWindow, computerUnlockWindow }
     public Windows openWindow;
 
     public GameObject referenceGameObject;
 
     private Vector3 _firstClickPosition;
-    private void Start()
-    {
-        managerState = manager.GetComponent<ManagerStateMachine>();
-    }
+
     void OnMouseDown()
     {
         _firstClickPosition = Input.mousePosition;
@@ -33,6 +30,7 @@ public class ClickableObject : MonoBehaviour
 
     private void MoveToDestination()
     {
+        managerState = manager.GetComponent<ManagerStateMachine>();
         Vector3 currentClickPosition = Input.mousePosition;
         if ((_firstClickPosition - currentClickPosition).magnitude > 10f)
             return;
@@ -57,5 +55,8 @@ public class ClickableObject : MonoBehaviour
     {
         if (openWindow == Windows.computerInfoWindow)
             ComputerInfoWindow.Instance.OpenWindow(referenceGameObject.GetComponent<Computer>());
+
+        if (openWindow == Windows.computerUnlockWindow)
+            ComputerUnlockWindow.Instance.OpenWindow(referenceGameObject.GetComponent<Computer>());
     }
 }
