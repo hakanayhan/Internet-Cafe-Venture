@@ -27,6 +27,11 @@ public class ComputerInfoWindow : Window
         Instance = this;
     }
 
+    private void Start()
+    {
+        computer = ComputerManager.Instance.computers[0];
+    }
+
     public void LoadData(Computer computerObject)
     {
         Computers computer = ComputerManager.Instance.computers.Find(a => a.computerObject == computerObject);
