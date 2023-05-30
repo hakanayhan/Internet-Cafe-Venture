@@ -7,7 +7,7 @@ public class ComputerManager : MonoBehaviour
 {
     public static ComputerManager Instance;
     public List<Computers> computers = new List<Computers>();
-    public List<UpgradeRank> upgradeRanks;
+    public List<ComputerUpgradeRank> upgradeRanks;
 
     void Awake()
     {
@@ -64,7 +64,7 @@ public class ComputerManager : MonoBehaviour
     public double upgradeCostMultiplier = 1;
 }
 
-[Serializable] public class UpgradeRank
+[Serializable] public class ComputerUpgradeRank
 {
     public int rankUpLevel;
 }
