@@ -9,7 +9,7 @@ public class ClickableObject : MonoBehaviour
     public enum WhereTo { Null, managerDesk, freeMove }
     public WhereTo whereTo;
 
-    public enum Windows { Null, computerInfoWindow, computerUnlockWindow }
+    public enum Windows { Null, computerInfoWindow, computerUnlockWindow, upgradesWindow }
     public Windows openWindow;
 
     public GameObject referenceGameObject;
@@ -58,5 +58,8 @@ public class ClickableObject : MonoBehaviour
 
         if (openWindow == Windows.computerUnlockWindow)
             ComputerUnlockWindow.Instance.OpenWindow(referenceGameObject.GetComponent<Computer>());
+
+        if (openWindow == Windows.upgradesWindow)
+            UpgradesWindow.Instance.OpenWindow();
     }
 }
