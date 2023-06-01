@@ -13,6 +13,10 @@ public class CustomerManager : MonoBehaviour
     public List<CustomerStateMachine> customers = new List<CustomerStateMachine>();
     public double minSpawnDelay = 2;
     public double maxSpawnDelay = 8;
+
+    public int minUsageTime = 15;
+    public int maxUsageTime = 15;
+
     [HideInInspector] public float nextSpawnTime;
     List<string> names = new List<string>()
     {
@@ -44,9 +48,16 @@ public class CustomerManager : MonoBehaviour
     {
         GameObject customerGameObject = Instantiate(_customerPrefab, spawnPoint.position, Quaternion.identity);
         CustomerStateMachine customer = customerGameObject.GetComponent<CustomerStateMachine>();
+        customer.usageTime = SetUsageTime();
         QueueController.Instance.AddQueue(customer);
         SetCustomerName(customer);
         customers.Add(customer);
+    }
+
+    private float SetUsageTime()
+    {
+        float a = Random.Range(minUsageTime, maxUsageTime + 1);
+        return a;
     }
 
     private void SetCustomerName(CustomerStateMachine customer)
