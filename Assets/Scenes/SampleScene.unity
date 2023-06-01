@@ -1728,6 +1728,8 @@ MonoBehaviour:
   customers: []
   minSpawnDelay: 5
   maxSpawnDelay: 10
+  minUsageTime: 15
+  maxUsageTime: 15
   nextSpawnTime: 0
 --- !u!114 &310194827
 MonoBehaviour:
@@ -1779,6 +1781,7 @@ MonoBehaviour:
   - rankUpLevel: 10
   - rankUpLevel: 25
   - rankUpLevel: 50
+  incomeMultiplier: 1
 --- !u!114 &310194828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,6 +1816,24 @@ MonoBehaviour:
     rank: 1
     level: 1
     feature: 0
+    currentRate: 1
+    multiplyRate: 0
+    addRate: 1
+    priceMultiply: 2
+    upgradeRank:
+    - rankUpLevel: 0
+    - rankUpLevel: 5
+    - rankUpLevel: 10
+    - rankUpLevel: 15
+    - rankUpLevel: 20
+    - rankUpLevel: 25
+  - icon: {fileID: 0}
+    upgradeTitle: COMFORT
+    upgradeText: Enhanced comfort, longer customer stays
+    basePrice: 10
+    rank: 1
+    level: 1
+    feature: 1
     currentRate: 1
     multiplyRate: 0
     addRate: 1

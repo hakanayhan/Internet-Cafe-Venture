@@ -45,6 +45,14 @@ public class UpgradesListItemController : MonoBehaviour
 
             return "Max Customer: " + CustomerManager.Instance.maxCustomer + " => " + i;
         }
+        else if (upgrade.feature == Upgrade.Features.comfort)
+        {
+            string i = ComputerManager.Instance.incomeMultiplier.ToString("0.0");
+            string j = ComputerManager.Instance.incomeMultiplier.ToString("0.0");
+            if (upgrade.upgradeRank[upgrade.rank].rankUpLevel == upgrade.level + 1)
+                j = (ComputerManager.Instance.incomeMultiplier + 0.1).ToString("0.0");
+            return "Computer Income Multiplier: "+ i +"x => " + j +"x";
+        }
         return null;
     }
 
@@ -60,7 +68,14 @@ public class UpgradesListItemController : MonoBehaviour
             string s = minSpawnUpgraded + "-" + maxSpawnUpgraded + "s";
             return "Spawn Delay: " + minSpawn + "-" + maxSpawn + "s => " + s;
         }
-        return null;
+        else if (upgrade.feature == Upgrade.Features.comfort)
+        {
+            float i = CustomerManager.Instance.minUsageTime;
+            float j = CustomerManager.Instance.maxUsageTime;
+
+            return "Usage Time: " + i + "-" + j + "s => " + i + "-" + (j + 1) + "s";
+        }
+            return null;
     }
 
     private void AdjustProgressBar()
@@ -83,6 +98,15 @@ public class UpgradesListItemController : MonoBehaviour
                 {
                     upgrade.rank++;
                     CustomerManager.Instance.maxCustomer += 1;
+                }
+            }
+            else if (upgrade.feature == Upgrade.Features.comfort)
+            {
+                CustomerManager.Instance.maxUsageTime++;
+                if (upgrade.upgradeRank[upgrade.rank].rankUpLevel == upgrade.level + 1)
+                {
+                    upgrade.rank++;
+                    ComputerManager.Instance.incomeMultiplier += 0.1f;
                 }
             }
             upgrade.level++;

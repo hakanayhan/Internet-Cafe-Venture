@@ -44,7 +44,7 @@ public class Upgrade
     public double basePrice;
     public int rank = 1;
     public int level;
-    public enum Features { popularity }
+    public enum Features { popularity, comfort }
     public Features feature;
     public float currentRate = 1;
     public float multiplyRate = 1;
