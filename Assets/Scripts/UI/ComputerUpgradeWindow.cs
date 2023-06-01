@@ -46,7 +46,7 @@ public class ComputerUpgradeWindow : Window
         deviceNameText.text = name;
         level = computer.level;
         levelText.text = "Level " + level.ToString();
-        cost = new Currency(computer.cost);
+        cost = new Currency(computer.cost * ComputerManager.Instance.incomeMultiplier);
         costPerSecText.text = cost.ToString() + "/sec";
         upgradeCost = new Currency(computer.upgradeCost);
         upgradeCostText.text = upgradeCost.ToString();

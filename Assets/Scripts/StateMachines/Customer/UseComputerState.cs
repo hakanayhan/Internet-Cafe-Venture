@@ -33,7 +33,7 @@ public class UseComputerState : State
         {
             lastUsageTime = currentUsageTime;
             computer.usageTime = currentUsageTime;
-            computer.totalCost += computer.cost;
+            computer.totalCost += computer.cost * ComputerManager.Instance.incomeMultiplier;
             stateMachine.amountToPay += computer.cost;
             ComputerInfoWindow.Instance.Refresh();
         }

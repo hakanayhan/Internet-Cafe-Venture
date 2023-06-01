@@ -8,7 +8,7 @@ public class ComputerManager : MonoBehaviour
     public static ComputerManager Instance;
     public List<Computers> computers = new List<Computers>();
     public List<ComputerUpgradeRank> upgradeRanks;
-
+    public float incomeMultiplier = 1.0f;
     void Awake()
     {
         if (Instance != null)

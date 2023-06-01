@@ -51,7 +51,7 @@ public class ComputerInfoWindow : Window
         deviceNameText.text = name;
         float level = computer.level;
         levelText.text = level.ToString();
-        Currency cost = new Currency(computer.cost);
+        Currency cost = new Currency(computer.cost * ComputerManager.Instance.incomeMultiplier);
         costPerSecText.text = cost.ToString() + "/sec";
         string customerName = (computer.customer != null) ? computer.customer.customerName : "Empty";
         customerText.text = customerName;
