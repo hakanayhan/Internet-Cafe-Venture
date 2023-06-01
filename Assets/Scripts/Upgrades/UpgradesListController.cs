@@ -42,7 +42,7 @@ public class Upgrade
     public string upgradeTitle;
     public string upgradeText;
     public double basePrice;
-    public int rank = 0;
+    public int rank = 1;
     public int level;
     public enum Features { popularity }
     public Features feature;

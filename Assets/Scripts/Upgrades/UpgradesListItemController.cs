@@ -15,6 +15,7 @@ public class UpgradesListItemController : MonoBehaviour
     [SerializeField] private Text _function2Text;
     [SerializeField] private Text _priceText;
     [SerializeField] private Text _levelText;
+    [SerializeField] private ProgressBar _progressBar;
     double price;
 
     private void Start()
@@ -22,11 +23,16 @@ public class UpgradesListItemController : MonoBehaviour
         _icon.sprite = upgrade.icon;
         _title.text = upgrade.upgradeTitle;
         _description.text = upgrade.upgradeText;
+
         _functionText.text = GetFunctionText();
         _function2Text.text = GetFunction2Text();
+
         price = upgrade.basePrice;
         _priceText.text = new Currency(price).ToString();
+
         _levelText.text = "LVL " + upgrade.level.ToString();
+
+        AdjustProgressBar();
     }
 
     private string GetFunctionText()
@@ -57,6 +63,14 @@ public class UpgradesListItemController : MonoBehaviour
         return null;
     }
 
+    private void AdjustProgressBar()
+    {
+        float rankLv = upgrade.upgradeRank[upgrade.rank].rankUpLevel;
+        float prevRankLv = upgrade.upgradeRank[upgrade.rank - 1].rankUpLevel;
+        float progress = ((upgrade.level - prevRankLv) % (rankLv - prevRankLv)) / (rankLv - prevRankLv);
+        _progressBar.SetFillAmount(progress);
+    }
+
     public void UpgradeButton()
     {
         if (Wallet.Instance.TryRemoveMoney(price))
@@ -83,5 +97,6 @@ public class UpgradesListItemController : MonoBehaviour
         _levelText.text = "LVL " + upgrade.level.ToString();
         _functionText.text = GetFunctionText();
         _function2Text.text = GetFunction2Text();
+        AdjustProgressBar();
     }
 }

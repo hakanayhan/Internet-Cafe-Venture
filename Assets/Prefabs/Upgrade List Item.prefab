@@ -433,6 +433,7 @@ MonoBehaviour:
   _function2Text: {fileID: 6310332708639029434}
   _priceText: {fileID: 7285387093496512345}
   _levelText: {fileID: 7285387093784818434}
+  _progressBar: {fileID: 7285387094570337929}
 --- !u!1 &7285387093058947480
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +548,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -53, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7285387093496512166
 CanvasRenderer:
