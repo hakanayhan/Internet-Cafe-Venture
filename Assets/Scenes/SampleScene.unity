@@ -1746,10 +1746,10 @@ MonoBehaviour:
     isIdle: 1
     level: 0
     baseCost: 1
-    baseUpgradeCost: 50
+    baseUpgradeCost: 20
     unlockCost: 0
     cost: 1
-    upgradeCost: 50
+    upgradeCost: 20
     usageTime: 0
     totalCost: 0
     rank: 1
@@ -1762,10 +1762,10 @@ MonoBehaviour:
     isIdle: 1
     level: 0
     baseCost: 1
-    baseUpgradeCost: 50
-    unlockCost: 50
+    baseUpgradeCost: 20
+    unlockCost: 100
     cost: 1
-    upgradeCost: 50
+    upgradeCost: 20
     usageTime: 0
     totalCost: 0
     rank: 1

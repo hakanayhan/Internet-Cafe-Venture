@@ -22,7 +22,7 @@ public class ComputerManager : MonoBehaviour
     {
         computer.level++;
         computer.computerUpgrades.costMultiplier += 0.1;
-        computer.computerUpgrades.upgradeCostMultiplier += 0.15;
+        computer.computerUpgrades.upgradeCostMultiplier += 0.2;
         computer.cost = computer.baseCost * computer.computerUpgrades.costMultiplier;
         computer.upgradeCost = computer.baseUpgradeCost * computer.computerUpgrades.upgradeCostMultiplier;
         if(computer.level == upgradeRanks[computer.rank].rankUpLevel)
