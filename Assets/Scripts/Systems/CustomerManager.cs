@@ -11,8 +11,8 @@ public class CustomerManager : MonoBehaviour
     public Transform checkoutLocation;
     [SerializeField] private GameObject _customerPrefab;
     public List<CustomerStateMachine> customers = new List<CustomerStateMachine>();
-    [SerializeField] private float _minSpawnDelay = 2f;
-    [SerializeField] private float _maxSpawnDelay = 8f;
+    public double minSpawnDelay = 2;
+    public double maxSpawnDelay = 8;
     [HideInInspector] public float nextSpawnTime;
     List<string> names = new List<string>()
     {
@@ -57,6 +57,6 @@ public class CustomerManager : MonoBehaviour
 
     public void SetDelayTime()
     {
-        nextSpawnTime = Time.time + Random.Range(_minSpawnDelay, _maxSpawnDelay);
+        nextSpawnTime = Time.time + Random.Range((float)minSpawnDelay, (float)maxSpawnDelay);
     }
 }
