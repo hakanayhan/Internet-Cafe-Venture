@@ -19,9 +19,11 @@ public class UpgradesWindow : Window
     {
         panel.SetActive(true);
         CloseWindowsOnClick.Instance.WindowOpened();
+        CameraController.Instance.enabled = false;
     }
     public override void CloseWindow()
     {
         panel.SetActive(false);
+        CameraController.Instance.enabled = true;
     }
 }

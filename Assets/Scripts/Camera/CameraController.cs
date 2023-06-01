@@ -4,7 +4,17 @@ public class CameraController : MonoBehaviour
 {
     Vector3 dragOrigin;
     Camera mainCamera;
+    public static CameraController Instance;
     [SerializeField] private CameraSettings _settings;
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     void Start()
     {
