@@ -42,10 +42,19 @@ public class Upgrade
     public string upgradeTitle;
     public string upgradeText;
     public double basePrice;
+    public int rank = 0;
     public int level;
     public enum Features { popularity }
     public Features feature;
     public float currentRate = 1;
     public float multiplyRate = 1;
     public float addRate = 0;
+    public float priceMultiply = 2;
+    public List<UpgradeRank> upgradeRank;
+}
+
+[Serializable]
+public class UpgradeRank
+{
+    public int rankUpLevel;
 }
